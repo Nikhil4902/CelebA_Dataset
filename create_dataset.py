@@ -5,7 +5,7 @@ import tqdm
 import random
 from collections import defaultdict
 
-random.seed(54321)
+random.seed(1234)
 
 os.system("rm -rf Datasets")
 os.system("mkdir Datasets")
@@ -13,7 +13,7 @@ os.system("mkdir Datasets/train_dataset")
 os.system("mkdir Datasets/validation_dataset")
 os.system("mkdir Datasets/test_dataset")
 
-num_celebs = 200
+num_celebs = 100
 num_imgs = 30
 validation_ratio = 0.1
 test_ratio = 0.1
@@ -54,12 +54,9 @@ with open("identity_CelebA.txt") as f:
         for img in train_imgs:
             bw_face = detect_face(f"img_align_celeba/{img}")
             cv2.imwrite(f"Datasets/train_dataset/celeb_{i}/{img}", bw_face)
-            # os.system(f"cp img_align_celeba/{img} Datasets/train_dataset/celeb_{i}/{img}")
         for img in validation_imgs:
             bw_face = detect_face(f"img_align_celeba/{img}")
             cv2.imwrite(f"Datasets/validation_dataset/celeb_{i}/{img}", bw_face)
-            # os.system(f"cp img_align_celeba/{img} Datasets/validation_dataset/celeb_{i}/{img}")
         for img in test_imgs:
             bw_face = detect_face(f"img_align_celeba/{img}")
             cv2.imwrite(f"Datasets/test_dataset/celeb_{i}/{img}", bw_face)
-            # os.system(f"cp img_align_celeba/{img} Datasets/test_dataset/celeb_{i}/{img}")
