@@ -13,7 +13,7 @@ os.system("mkdir Datasets/train_dataset")
 os.system("mkdir Datasets/validation_dataset")
 os.system("mkdir Datasets/test_dataset")
 
-num_celebs = 100
+num_celebs = 50
 num_imgs = 30
 validation_ratio = 0.1
 test_ratio = 0.1
